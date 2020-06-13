@@ -1,0 +1,36 @@
+*{background: yellow;}
+.divs{
+    background: black;
+    color:pink
+}
+main{
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 100px 140px 140px 100px;
+    grid-template-columns: repeat(3, 1fr) 150px;
+}
+#div1{
+    background: red;
+    grid-column: 1/-1;
+}
+#div2{
+    background: green;
+}
+#div3{
+    background: blue;
+}
+#div4{
+    background: brown;
+}
+#div5{
+    background: aqua;
+    grid-row: 2/4;
+    grid-column: 4/5
+}
+#div6{
+    background: peru;
+}
+#div7{
+    background: violet;
+    grid-column: 1/-1;
+}
