@@ -10,7 +10,7 @@ main{
     grid-template-columns: repeat(3, 1fr) 150px;
 }
 #div1{
-    background: red;
+    background: orange;
     grid-column: 1/-1;
 }
 #div2{
