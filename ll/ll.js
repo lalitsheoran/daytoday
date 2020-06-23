@@ -98,9 +98,52 @@ class LinkedList{
         return false
         
     }
+    insert(idx,value){
+        let newNode=new Node(value)
+        if(idx===0){
+            newNode.next=this.head
+            this.head=newNode
+            this.length++
+            return true
+        }
+        else if(idx===this.length){
+            this.tail.next=newNode
+            this.tail=newNode
+            this.length++
+            return true
+        }
+        else if(idx>0 && idx<this.length){
+            let current = this.head
+            let prev
+            let count=0
+            while(count!=idx){
+                prev=current
+                current=current.next
+                count++
+            }
+            prev.next=newNode
+            newNode.next=current
+            this.length++
+            return true
+        }
+        return false
+    }
+    remove(idx){
+        if(idx-1===0){
+            this.pop()
+            return true
+        }
+        let prev=this.get(idx-1)
+        if(prev){
+            let temp=prev.next.next
+            this.length--
+            prev.next=temp
+            return true
+        }
+    }
 }
 let ll=new LinkedList()
 ll.push("how")
 ll.push("are")
 ll.push("you")
-ll.pop()
+// ll.pop()
