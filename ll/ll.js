@@ -129,17 +129,35 @@ class LinkedList{
         return false
     }
     remove(idx){
+        if(idx >= this.length || idx < 0){return false}
         if(idx-1===0){
-            this.pop()
+            this.shift()
             return true
         }
         let prev=this.get(idx-1)
         if(prev){
             let temp=prev.next.next
-            this.length--
             prev.next=temp
+            this.length--
             return true
         }
+    }
+    reverse(){
+        if(this.head){
+            let current=this.head
+            this.tail=this.head
+            let after=null
+            let before=null
+            while(current){
+                after=current.next
+                current.next=before
+                before=current
+                current=after
+            }   
+            this.head=before
+            return this
+        }
+        return false
     }
 }
 let ll=new LinkedList()
@@ -147,3 +165,4 @@ ll.push("how")
 ll.push("are")
 ll.push("you")
 // ll.pop()
+ll.reverse()
